@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Simple Home - Home.htm</title>
+  <meta name="description" content="A clean, responsive single-file homepage (save as .htm or .html)" />
+  <style>
+    :root{
+      --accent:#0ea5a4;
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#94a3b8
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028 0%,#041027 100%);color:#e6eef6;line-height:1.5}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0;transition:background 0.3s ease}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052023}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
+    .speaker{font-size:22px;cursor:pointer}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:36px}
+    .hero h1{font-size:34px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:10px}
+    .btn{background:var(--accent);color:#052023;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600;transition:background 0.3s ease}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .feature{padding:14px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .feature h3{margin:0 0 8px;font-size:16px}
+    .muted{color:var(--muted)}
+
+    footer{margin-top:40px;padding:18px 0;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{flex-wrap:wrap}
+      .features{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header id="site-header" style="background:var(--accent);">
+      <div class="logo">
+        <div class="mark">MH</div>
+        <div>
+          <div style="font-weight:700">MyHome</div>
+          <div class="muted" style="font-size:12px">Simple. Fast. Lightweight.</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <span class="speaker" title="Change theme color">change</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Beautiful, minimal homepage — single file (.htm)</h1>
+          <p class="muted">This starter page is responsive, accessible and ready to customize. Paste content, replace colors, or add your own images.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Get Started</a>
+            <a class="btn secondary" href="#features">View Features</a>
+          </div>
+
+          <div class="card" style="margin-top:18px">
+            <strong>Quick info</strong>
+            <div class="muted" style="font-size:13px;margin-top:8px">Single-file HTML you can save as <code>home.htm</code> and open in any browser.</div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Welcome</h3>
+          <p class="muted">Use this panel for a short intro, an image, or a signup form.</p>
+          <form id="newsletter" style="margin-top:12px;display:flex;gap:8px">
+            <input type="email" placeholder="you@example.com" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <button class="btn" type="submit">Join</button>
+          </form>
+        </aside>
+      </section>
+
+      <section id="features" style="margin-top:28px">
+        <h2 style="margin:0 0 12px">Features</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>Responsive</h3>
+            <p class="muted">Works great on phones, tablets and desktops.</p>
+          </div>
+          <div class="feature">
+            <h3>Accessible</h3>
+            <p class="muted">Semantic HTML and clear contrast for readability.</p>
+          </div>
+          <div class="feature">
+            <h3>Customizable</h3>
+            <p class="muted">Colors, fonts and layout are easy to change.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:28px">
+        <h2 style="margin:0 0 8px">About</h2>
+        <p class="muted">This template is intentionally small and dependency-free so it loads fast and is easy to edit. Add images, scripts, or server-side code when you need more complexity.</p>
+      </section>
+
+      <section id="contact" style="margin-top:22px">
+        <h2 style="margin:0 0 8px">Contact</h2>
+        <div class="card">
+          <form onsubmit="event.preventDefault();alert('Thanks — form not connected in this demo.');">
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <input required placeholder="Name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+              <input required type="email" placeholder="Email" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            </div>
+            <textarea required placeholder="Message" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" rows="4"></textarea>
+            <div style="margin-top:8px;text-align:right">
+              <button class="btn" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> MyHome — Built with ❤️. | <span class="muted">Single-file demo</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('newsletter').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks for joining! (demo only)');
+    });
+
+    const speaker = document.querySelector('.speaker');
+    const header = document.getElementById('site-header');
+    const root = document.documentElement;
+
+    const colors = ["#0ea5a4", "#9333ea", "#f97316", "#22c55e", "#3b82f6"];
+    let colorIndex = 0;
+
+    speaker.addEventListener('click',()=>{
+      colorIndex = (colorIndex + 1) % colors.length;
+      const newColor = colors[colorIndex];
+      root.style.setProperty('--accent', newColor);
+      header.style.background = newColor;
+    });
+  </script>
+</body>
+</html>l
